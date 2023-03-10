@@ -7,7 +7,7 @@ const WeekView = () => {
    let habitState = useSelector((state) => state.habits);
 
    // getting habit from habits state according to local storage id and set it on habit
-   let habit = {}
+   let habit = {};
    for (let i=0; i<habitState.length ; i++) {
     if(habitState[i].id === Number(localStorage.getItem("id"))) {
         habit = habitState[i];
@@ -24,7 +24,7 @@ const WeekView = () => {
         <h1 className='text-center' style={{ textTransform: "capitalize"}}>
            Progress Name:- {habit.name}
         </h1>
-        <div className='"days-container'>
+        <div className='days-container'>
            {habit.weekLog.map((day, index) => (
              <DayView day={day} key={index} />
            ))}

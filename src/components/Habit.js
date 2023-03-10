@@ -13,8 +13,8 @@ const Habit = ({habit, habitNumber}) => {
   let countDone = 0;
 
   // loop through the Habit's weekLog and count the number of times the habit  was completed
-  for (let i = 0 ; i < Habit.weekLog.length; i++){
-    if(Habit.weekLog[i].isDone === true) {
+  for (let i = 0 ; i < habit.weekLog.length; i++){
+    if(habit.weekLog[i].isDone === true) {
       countDone++;
     }
   }
@@ -24,10 +24,10 @@ const Habit = ({habit, habitNumber}) => {
     alert("delete successfully");
   }
   
-const setId = () => {
-  localStorage.setItem("id", habit.id); // set the habit's id in local storage
-  navigate("/weekly");
-}
+  const setId = () => {
+    localStorage.setItem("id", habit.id); // set the habit's id in local storage
+    navigate("/weekly");
+  }
 
   return (
     <div className='habit'>
@@ -37,7 +37,7 @@ const setId = () => {
              {habitNumber + 1}.{habit.name}
           </h4>
           <div className='"progress-continer'>
-              <div className='progress-bar' style={{"--progress-width": `${countDone / (todayDay + 1) * 100}%`}}>
+              <div className='progress-bar' style={{"--progress-width": `${(countDone / (todayDay + 1)) * 100}%`}}>
                 <div className='progress-bar-text'>{Math.round((countDone / (todayDay + 1)) * 100 )}%</div>
               </div>
           </div>
@@ -47,7 +47,7 @@ const setId = () => {
         <div className='week-btn' onClick={setId}>
             Weekly Track
         </div>
-        <i className='fa-solid fa-trash' onClick={{handleDelete}}></i>
+        <i className='fa-solid fa-trash' onClick={handleDelete}></i>
       </div>  
     </div>
   );

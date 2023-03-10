@@ -10,7 +10,7 @@ const Home = () => {
   const handleSave = () => {
     const trimmedHabitName = habitName.trim();
     //check if the trimmed habit name is more than 2 characters and only contains alphabets
-    const isValid = /^[A-Za-z]$/.text(trimmedHabitName);
+    const isValid = /^[A-Za-z]{3,}$/.test(trimmedHabitName);
     if(isValid) {
         // Dispatch an action to add new habit to the Redux store.
         dispatch(addHabit(trimmedHabitName));

@@ -1,4 +1,5 @@
-import React from 'react';
+import { combineReducers } from "redux";
+import habitReducer from "./features/habitSlice";
 
 const rootReducer = combineReducers({
    habits: habitReducer

@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { habitDone, habitNone, habitUnDone} from "../redux/features/habitSlice";
 
 
-const Dayview = () => {
+const Dayview = ({day}) => {
   const today = new Date();
-  const todayDay = useDispatch();
+  const todayDay = today.getDay();
 
   const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ const Dayview = () => {
   };
 
   const markToNone = () => {
-    if (getByDisplayValue.id > todayDay) {
+    if (day.id > todayDay) {
         alert("You cannot change your next days status");
         return;
     }
@@ -45,9 +45,9 @@ const Dayview = () => {
               </p>
            </div>
            <div className='day-container'>
-              <i className={day.isDone === true ? "fa-solid fa-circle-check circle-icon active" : "fa-solid fa-circle-check circle-icon"} onclick={markToDone}></i>
-              <i className={day.isDone === false ? "fa-solid fa-circle-xmark circle-icon active" : "fa-solid fa-circle-xmark circle-icon"} onclick={markToUndone}></i>
-              <i className={day.isDone === "" ? "fa-solid fa-circle-minus circle-icon active" : "fa-solid fa-circle-minus circle-icon"} onclick={markToNone}></i>
+              <i className={day.isDone === true ? "fa-solid fa-circle-check circle-icon active" : "fa-solid fa-circle-check circle-icon"} onClick={markToDone}></i>
+              <i className={day.isDone === false ? "fa-solid fa-circle-xmark circle-icon active" : "fa-solid fa-circle-xmark circle-icon"} onClick={markToUndone}></i>
+              <i className={day.isDone === "" ? "fa-solid fa-circle-minus circle-icon active" : "fa-solid fa-circle-minus circle-icon"} onClick={markToNone}></i>
            </div>
         </div>
     </div>
