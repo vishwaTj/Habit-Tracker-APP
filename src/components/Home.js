@@ -14,7 +14,6 @@ const Home = () => {
     if (isValid) {
       // Dispatch an action to add a new habit to the Redux store.
       dispatch(addHabit(trimmedHabitName));
-      alert("Your habit added successfully");
       setHabitName("");
     } else {
       alert("Habit name should be more than 2 alphabet and only contain alphabets.");
@@ -25,36 +24,34 @@ const Home = () => {
   let habitsState = useSelector((state) => state["habits"]);
 
   return (
-    <div className="container habits-container my-3">
-      <div className="container d-flex justify-content-center my-3">
-        <div>
-          <h3 className="text-center mb-4">Progress Pilot</h3>
-          <form className="add-habit-form">
-            <div className="form-group">
-              <div className="input-group">
-                <input
-                  type="text"
-                  minLength="3"
-                  required
-                  className="form-control col-8"
-                  id="habit-input"
-                  placeholder="Enter a habit with more than 2 characters"
-                  value={habitName}
-                  onChange={(e) => setHabitName(e.target.value)}
-                />
-                <button className="add-habit-btn btn btn-primary" type="button" onClick={handleSave}>
-                  <i className="fa-solid fa-plus"></i> Add
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
+    <div className="main-container">
+      <div>
+          <form className="input-section">
+           <h1>Habit Tracker APP</h1>  
+           <div className="input-box"> 
+            <input
+              type="text"
+              minLength="3"
+              required
+              className="form-control"
+              id="habit-input"
+              placeholder="Enter A habit"
+              value={habitName}
+              onChange={(e) => setHabitName(e.target.value)}
+            />
+           </div> 
+          <div> 
+           <button className="add-habit-btn btn btn-primary" type="button" onClick={handleSave}>
+             <i className="fa-solid fa-plus"></i> Add
+           </button>
+          </div>            
+        </form>
       </div>
-      <div className="habits-list">
-        {habitsState.map((habit, index) => (
+       <div className="habits-list">
+         {habitsState.map((habit, index) => (
           <Habit habit={habit} habitNumber={index} key={habit.id} />
-        ))}
-      </div>
+         ))}
+       </div>      
     </div>
   );
 };

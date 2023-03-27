@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 35px;
+}
+
+
+/* ***     input section   ***    */ 
+.input-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fcf403;
+  justify-content: space-evenly;
+  height: 150px;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.input-box{
+  width: 350px;
+}
+
+input[type="text"] {
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+
+/* habit list */
+
+.habits-container {
+  max-width: 50%;
+  margin: 0 auto;
+  color: #333;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fcf403;
+}
+
+.add-habit-form {
+  margin-bottom: 20px;
+}
+
+.add-habit-form label {
+  font-weight: bold;
+}
+
+.add-habit-btn {
+  margin-left: 10px;
+}
+
+.habits-list{
+  width: 64%;
+}
+
+.habit{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px; 
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #fcf403;
+}
+
+.habit h4{
+  margin-left: 10px;
+}
+
+.progress-container {
+  width: 100px;
+  height: 16px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #e91e63;
+  width: var(--progress-width);
+  transition: width 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.habit-left h4 {
+  margin-bottom: 0;
+}
+
+.habit-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.habit-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.fa-trash {
+  cursor: pointer;
+  color: #0339fc;
+  font-size: 30px;
+  margin-right: 7px;
+}
+
+.fa-trash:hover {
+  color: red;
+}
+
+.week-btn {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #2aa8d0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 25px;
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s ease;
+}
+.week-view-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  margin: 1em auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.Habit-heading{
+  border: 1px solid white;
+  background-color: #fcf403;
+  color:blue;
+  border-radius: 20px;
+  width: 450px;
+}
+
+.btn-container {
+  position: absolute;
+  left: 0;
+}
+
+.days-container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.day-container {
+  height: auto;
+  width: auto;
+  background-color: #dadada;
+  border-radius: 10px;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.day-container:hover {
+  background-color: #777777;
+}
+
+.day-container i {
+  font-size: 1.2rem;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.day-container i.active {
+  color: #2aa8d0;
+  font-size: 1.5rem;
 }

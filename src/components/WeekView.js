@@ -16,18 +16,23 @@ const WeekView = () => {
 
   return (
     <div className="week-view-container">
+      <div className="Habit-heading">
+        <h1 className="text-center" style={{ textTransform: "capitalize" }}>
+          Habit :- {habit.name}
+        </h1>
+      </div>  
       <div className="btn-container">
         <a href="/" className="btn btn-outlined bg-info rounded-0" role="button">
           Back to Home
         </a>
       </div>
-      <h1 className="text-center" style={{ textTransform: "capitalize" }}>
-        Progress Name:- {habit.name}
-      </h1>
       <div className="days-container">
         {habit.weekLog.map((day, index) => (
           <DayView day={day} key={index} />
         ))}
+      </div>
+      <div>
+        
       </div>
     </div>
   );

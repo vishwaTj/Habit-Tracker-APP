@@ -20,7 +20,6 @@ const Habit = ({ habit, habitNumber }) => {
 
   const handleDelete = () => {
     dispatch(deleteHabit(habit.id)); // dispatch deleteHabit action with the habit's id
-    alert("deleted successfully");
   };
 
   const setId = () => {
@@ -29,11 +28,11 @@ const Habit = ({ habit, habitNumber }) => {
   };
 
   return (
-    <div className="habit">
+    <div className="habit" >
       <div className="habit-left">
         <div>
           <h4>
-            {habitNumber + 1}. {habit.name}
+            {habit.name}
           </h4>
           <div className="progress-container">
             <div className="progress-bar" style={{ "--progress-width": `${(countDone / (todayDay + 1)) * 100}%` }}>
