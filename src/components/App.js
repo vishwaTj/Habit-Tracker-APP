@@ -1,18 +1,17 @@
-// import './App.css';
-import React from 'react';
-import {Route, Routes} from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import WeekView from "./WeekView";
 
-const App = ()=> {
+const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/weekly" element={<WeekView />} />
-      </Routes>   
+      </Routes>
     </>
   );
-}
+};
 
 export default App;
