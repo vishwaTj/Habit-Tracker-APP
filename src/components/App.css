@@ -152,8 +152,21 @@ input[type="text"] {
 }
 
 .btn-container {
-  position: absolute;
-  left: 0;
+  margin-top: 20px;
+  background-color: aliceblue;
+  padding: auto;
+  border-radius: 20px;
+  border: 1px solid white;
+  width: 150px;
+  background-color: rgb(0, 255, 225);
+}
+
+.btn-container a{
+  text-align: center;
+  padding-left: 17px;
+  color: white;
+  text-decoration: none;
+  color: #0339fc;
 }
 
 .days-container {
@@ -167,7 +180,7 @@ input[type="text"] {
 .day-container {
   height: auto;
   width: auto;
-  background-color: #dadada;
+  background-color: lightgreen;
   border-radius: 10px;
   padding: 5px 15px;
   display: flex;
@@ -177,11 +190,11 @@ input[type="text"] {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  margin: 10px;
+  margin-top: 50px;
 }
 
 .day-container:hover {
-  background-color: #777777;
+  background-color: aliceblue;
 }
 
 .day-container i {
@@ -191,6 +204,6 @@ input[type="text"] {
 }
 
 .day-container i.active {
-  color: #2aa8d0;
+  color: blue;
   font-size: 1.5rem;
 }

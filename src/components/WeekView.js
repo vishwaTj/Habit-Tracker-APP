@@ -22,7 +22,7 @@ const WeekView = () => {
         </h1>
       </div>  
       <div className="btn-container">
-        <a href="/" className="btn btn-outlined bg-info rounded-0" role="button">
+        <a href="/" >
           Back to Home
         </a>
       </div>
@@ -30,9 +30,6 @@ const WeekView = () => {
         {habit.weekLog.map((day, index) => (
           <DayView day={day} key={index} />
         ))}
-      </div>
-      <div>
-        
       </div>
     </div>
   );

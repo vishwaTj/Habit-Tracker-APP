@@ -97,16 +97,7 @@ export const habitSlice = createSlice({
         }
       }
       return tempHabits;
-    },
-    habitNone: (state, action) => {
-      let tempHabits = state;
-      for (let i = 0; i < tempHabits.length; i++) {
-        if (tempHabits[i].id === Number(localStorage.getItem("id"))) {
-          tempHabits[i].weekLog[action.payload].isDone = "";
-        }
-      }
-      return tempHabits;
-    },
+    }
   },
 });
 
