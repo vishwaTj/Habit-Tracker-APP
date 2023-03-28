@@ -34,10 +34,10 @@ const Habit = ({ habit, habitNumber }) => {
           <h4>
             {habit.name}
           </h4>
-          <div className="progress-container">
+          <div className="percentage-container">
             {/* Calculating the percentage for progress Bar */}
-            <div className="progress-bar" style={{ "--progress-width": `${(completedCount / (todayDay + 1)) * 100}%` }}>
-              <div className="progress-bar-text">{Math.round((completedCount / (todayDay + 1)) * 100)}%</div>
+            <div className="percentage-bar" style={{ "--percentage-completed": `${(completedCount / (todayDay + 1)) * 100}%` }}>
+              <div className="percentage-bar-text">{Math.round((completedCount / (todayDay + 1)) * 100)}%</div>
             </div>
           </div>
         </div>
