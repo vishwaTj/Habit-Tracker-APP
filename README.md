@@ -1,70 +1,37 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+https://user-images.githubusercontent.com/109414918/228140625-f1d4840e-fc91-4edb-bff8-2569418d7478.mp4
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://user-images.githubusercontent.com/109414918/228140663-6704ef41-38ad-4a38-a650-b62772b34efe.mp4
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+                                                              HABIT TRACKER APP
+          
+          This is a habit tracker appp to track your habits on a weekly basis. The application is built using react and redux libraries. 
+          
+          
+          The file system is divided into 3 parts 
+                       1) Main index.js file
+                       2) Components files containing all the components
+                       3) Redux to handle the redux stoore
+ 
+            index.js -> mainly has the import of provider for redux and its state and also routes
+            
+            
+            
+            Components -> this has all the component files
+                      i) App.js -> contains pathing for the routes of Home and week pages
+                      ii) Home.js -> main home page and also the input section is defined this also has child component Habit
+                      iii) Habit.js -> This has the card baed display for each habit added and also claculates percentage of habit calculated routes to Week
+                      iv) Week.js -> contains heading and also routing back to home page creates an iteration over all the days as DayCard
+                      v) DayCard -> The DayCard continaas the import of habit completed and habit uncheck functions from reducer functions and also buttons to check
+              
+             Redux -> this contains the actions, reducers and the store needed for the Redux store
+                      i) features -> HabitReducer.js ->continas all functions to handle changes 
+                      ii) rootReducer
+                      iii) store
