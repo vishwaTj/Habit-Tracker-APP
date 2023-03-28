@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import habitReducer from "./features/habitSlice";
+import habitReducer from "./features/HabitReducer";
 
 const rootReducer = combineReducers({
   habits: habitReducer,

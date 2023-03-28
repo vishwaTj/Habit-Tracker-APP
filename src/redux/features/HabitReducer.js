@@ -1,7 +1,7 @@
 // Create a Redux slice for managing habits
 import { createSlice } from "@reduxjs/toolkit";
 
-export const habitSlice = createSlice({
+export const HabitReducer = createSlice({
   name: "habits",
   initialState: [],
   reducers: {
@@ -80,7 +80,7 @@ export const habitSlice = createSlice({
       const tempHabits = state.filter((habit) => habit.id !== action.payload);
       return tempHabits;
     },
-    habitDone: (state, action) => {
+    habitCompleted: (state, action) => {
       let tempHabits = state;
       for (let i = 0; i < tempHabits.length; i++) {
         if (tempHabits[i].id === Number(localStorage.getItem("id"))) {
@@ -89,7 +89,7 @@ export const habitSlice = createSlice({
       }
       return tempHabits;
     },
-    habitUnDone: (state, action) => {
+    habitUnChecked: (state, action) => {
       let tempHabits = state;
       for (let i = 0; i < tempHabits.length; i++) {
         if (tempHabits[i].id === Number(localStorage.getItem("id"))) {
@@ -101,7 +101,7 @@ export const habitSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addHabit, deleteHabit, habitDone, habitUnDone, habitNone } = habitSlice.actions;
 
-export default habitSlice.reducer;
+export const { addHabit, deleteHabit, habitCompleted, habitUnChecked, habitNone } = HabitReducer.actions;
+
+export default HabitReducer.reducer;

@@ -1,34 +1,34 @@
 import React from "react";
-import DayView from "./Dayview";
+import DayCard from "./DayCard";
 import { useSelector } from "react-redux";
 
 const WeekView = () => {
-  // call use selector hook for getting state from reducer
-  let habitsState = useSelector((state) => state.habits);
+  // Extract the habit state from Redux Store
+  let Habits = useSelector((state) => state.habits);
 
-  // getting habit from habits state acording to local storage id and set it on habit
+  // Retrieving a single habit from local storage based on id
   let habit = {};
-  for (let i = 0; i < habitsState.length; i++) {
-    if (habitsState[i].id === Number(localStorage.getItem("id"))) {
-      habit = habitsState[i];
+  for (let i = 0; i < Habits.length; i++) {
+    if (Habits[i].id === Number(localStorage.getItem("id"))) {
+      habit = Habits[i];
     }
   }
 
   return (
     <div className="week-view-container">
       <div className="Habit-heading">
-        <h1 className="text-center" style={{ textTransform: "capitalize" }}>
+        <h1 className="text-center">
           Habit :- {habit.name}
         </h1>
       </div>  
       <div className="btn-container">
         <a href="/" >
-          Back to Home
+          Home Page
         </a>
       </div>
       <div className="days-container">
         {habit.weekLog.map((day, index) => (
-          <DayView day={day} key={index} />
+          <DayCard day={day} key={index} />
         ))}
       </div>
     </div>

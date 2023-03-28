@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { habitDone, habitUnDone } from "../redux/features/habitSlice";
+import { habitCompleted, habitUnChecked } from "../redux/features/HabitReducer";
 
-const DayView = ({ day }) => {
+const DayCard = ({ day }) => { 
   const today = new Date();
   const todayDay = today.getDay();
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const DayView = ({ day }) => {
       alert("You cannot change your next days status");
       return;
     }
-    dispatch(habitDone(day.id));
+    dispatch(habitCompleted(day.id));
   };
 
   const MarkUncheck = () => {
@@ -22,7 +22,7 @@ const DayView = ({ day }) => {
       alert("You cannot change your next days status");
       return;
     }
-    dispatch(habitUnDone(day.id));
+    dispatch(habitUnChecked(day.id));
   };
 
   return (
@@ -44,4 +44,4 @@ const DayView = ({ day }) => {
   );
 };
 
-export default DayView;
+export default DayCard;

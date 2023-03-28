@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteHabit } from "../redux/features/habitSlice";
+import { deleteHabit } from "../redux/features/HabitReducer";
 import { useNavigate } from "react-router-dom";
 
 
@@ -10,11 +10,11 @@ const Habit = ({ habit, habitNumber }) => {
 
   const today = new Date();
   const todayDay = today.getDay();
-  let countDone = 0;
-  // loop through the habit's weekLog and count the number of times the habit was completed
+  let completedCount = 0;
+  // counting the number of times habit has been completed
   for (let i = 0; i < habit.weekLog.length; i++) {
     if (habit.weekLog[i].isDone === true) {
-      countDone++;
+      completedCount++;
     }
   }
 
@@ -23,7 +23,7 @@ const Habit = ({ habit, habitNumber }) => {
   };
 
   const setId = () => {
-    localStorage.setItem("id", habit.id); // set the habit's id in local storage
+    localStorage.setItem("id", habit.id); // set the item to local storage to retrieve it on other page
     navigate("/weekly");
   };
 
@@ -35,8 +35,9 @@ const Habit = ({ habit, habitNumber }) => {
             {habit.name}
           </h4>
           <div className="progress-container">
-            <div className="progress-bar" style={{ "--progress-width": `${(countDone / (todayDay + 1)) * 100}%` }}>
-              <div className="progress-bar-text">{Math.round((countDone / (todayDay + 1)) * 100)}%</div>
+            {/* Calculating the percentage for progress Bar */}
+            <div className="progress-bar" style={{ "--progress-width": `${(completedCount / (todayDay + 1)) * 100}%` }}>
+              <div className="progress-bar-text">{Math.round((completedCount / (todayDay + 1)) * 100)}%</div>
             </div>
           </div>
         </div>
