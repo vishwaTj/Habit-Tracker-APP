@@ -1,4 +1,4 @@
-// Create a Redux slice for managing habits
+
 import { createSlice } from "@reduxjs/toolkit";
 
 export const HabitReducer = createSlice({
