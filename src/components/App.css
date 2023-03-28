@@ -94,6 +94,13 @@ input[type="text"] {
   left: 0;
 }
 
+.percentage-bar-text{
+  position: relative;
+  left: 5px;
+  bottom: 3px;
+  font-size:15px;
+}
+
 .habit-left h4 {
   margin-bottom: 0;
 }
